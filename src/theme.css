@@ -1,0 +1,250 @@
+:root {
+  color-scheme: dark;
+  --ink: #e8f3f6;
+  --muted: #91a8b2;
+  --line: #263844;
+  --paper: #080e14;
+  --panel: #101a23;
+  --teal: #4f8ff7;
+  --success: #78bf4b;
+  --warning: #f4cd16;
+  --error: #ef3545;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+header p,
+.muted {
+  color: var(--muted);
+}
+
+.live {
+  color: var(--success);
+}
+
+.visual {
+  background-color: var(--paper);
+  background-image: radial-gradient(#23373d 0.7px, transparent 0.7px);
+  background-size: 24px 24px;
+  border-color: var(--line);
+}
+
+.visual canvas {
+  cursor: grab;
+  touch-action: none;
+}
+
+.visual canvas:active {
+  cursor: grabbing;
+}
+
+.zoom-controls {
+  position: absolute;
+  z-index: 3;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #101a23e8;
+  box-shadow: 0 4px 14px #0005;
+}
+
+.zoom-controls button {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid #344d6f;
+  border-radius: 4px;
+  background: #182431;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.zoom-controls button:last-child {
+  width: 44px;
+  font-size: 10px;
+}
+
+.zoom-controls button:hover:not(:disabled) {
+  background: #23354a;
+}
+
+.zoom-controls button:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.zoom-controls span {
+  min-width: 38px;
+  color: var(--muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.legend {
+  background: #101a23e8;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+aside {
+  background: var(--panel);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+label:not(.toggle) {
+  color: #b0c2ca;
+}
+
+label strong {
+  color: var(--ink);
+}
+
+input[type="range"] {
+  accent-color: var(--teal);
+}
+
+.toggle input {
+  accent-color: var(--error);
+}
+
+button {
+  background: #285fae;
+}
+
+button.secondary {
+  background: #292f39;
+  color: #d5e4e9;
+}
+
+.stat {
+  border-color: #263844;
+}
+
+.stat span,
+.metric small {
+  color: var(--muted);
+}
+
+hr {
+  border-color: #263844;
+}
+
+.note {
+  color: var(--muted);
+}
+
+.appearance-controls {
+  margin: 8px 0 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.appearance-controls h3 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.outcome-colors {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.color-control {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.color-control input[type="color"] {
+  width: 100%;
+  height: 32px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: #080e14;
+  cursor: pointer;
+}
+
+.particle-size-control {
+  display: block;
+  margin-bottom: 16px;
+  color: #b0c2ca;
+}
+
+.particle-size-control strong {
+  float: right;
+  color: var(--ink);
+}
+
+.particle-size-control input[type="range"] {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.node-tooltip {
+  position: absolute;
+  z-index: 2;
+  width: 196px;
+  padding: 12px;
+  border: 1px solid #344d6f;
+  border-radius: 8px;
+  background: #101a23f2;
+  box-shadow: 0 8px 26px #0009, 0 0 18px #4f8ff71a;
+  color: var(--ink);
+  pointer-events: none;
+}
+
+.node-tooltip > strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.node-tooltip-total,
+.node-tooltip-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 0;
+  font-size: 11px;
+}
+
+.node-tooltip-total {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #263844;
+  color: var(--muted);
+}
+
+.node-tooltip-total b,
+.node-tooltip-row b {
+  color: var(--ink);
+}
+
+.node-tooltip-row small {
+  min-width: 38px;
+  color: var(--muted);
+  text-align: right;
+}
+
